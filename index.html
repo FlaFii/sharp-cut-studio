@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Cut Studio</title>
+    <link rel="icon" href="./img/fav-icon16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="./img/fav-icon32x32.png" type="image/png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2a1015e329.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <button class="burger-btn">
+            <i class="fa-solid fa-xmark burger-btn__close"></i>
+            <div class="burger-btn__box ">
+                <div class="burger-btn__bars"></div>
+            </div>
+        </button>
+        <div class="nav__items">
+            <a href="#offer" class="nav__item">Offer</a>
+            <a href="#shops" class="nav__item">Shops</a>
+            <a href="#discounts" class="nav__item">Discounts</a>
+            <a href="#reviews" class="nav__item">Reviews</a>
+            <a href="#contact" class="nav__item">Contact</a>
+        </div>
+    </nav>
+    <header class="header section">
+        <h1 class="header__heading">Sharp Cut Studio</h1>
+        <p class="header__text">Where style meets precision</p>
+        <a href="#offer" class="header__btn btn-animation">Learn more</a>
+        <a href="#offer" class="header__chevron"><i class="fa-solid fa-chevron-down"></i></a>
+        <div class="corner-block corner-block-left-bottom"></div>
+        <div class="corner-block corner-block-right-bottom"></div>
+    </header>
+    <main class="main">
+        <section class="offer section-padding" id="offer">
+            <div class="wrapper">
+                <h2 class="section-heading">Get your dream look</h2>
+
+
+                <div class="offer__box">
+                    <div class="offer__box-img">
+                        <img src="./img/offer-img-haircut.jpg" alt="shorn man at barber shop" class="offer__img">
+                    </div>
+                    <div class="offer__box-text">
+                        <h3 class="offer__title">Flaweless Haircuts</h3>
+                        <p class="offer__text">Achieve a sharp, clean, and modern look with precision cuts tailored to
+                            your style. Whether you're after a classic trim or a bold new hairstyle, our expert barbers
+                            use the latest techniques to ensure you leave feeling confident and refreshed.</p>
+                    </div>
+                </div>
+                <div class="offer__box">
+                    <div class="offer__box-img offer__box-img--right">
+                        <img src="./img/offer-img-beard.jpg" alt="man stroking trimmed beard" class="offer__img">
+                    </div>
+                    <div class="offer__box-text offer__box-text--right">
+                        <h3 class="offer__title">Perfect Beard Grooming</h3>
+                        <p class="offer__text">Your beard deserves the same attention to detail as your hair. We offer
+                            expert trimming, shaping, and grooming services to give your beard a polished and
+                            well-maintained look. Whether you want a clean, sharp edge or a fuller, natural shape, we
+                            have you covered.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-img section-padding">
+            <div class="corner-block corner-block-left-bottom"></div>
+            <div class="corner-block corner-block-right-top"></div>
+            <p class="hero-img__title">Sharp Cut Studio</p>
+            <hr>
+            <p class="hero-img__text">Since 1997</p>
+            <hr>
+        </section>
+
+        <section class="shops section-padding" id="shops">
+
+            <div class="wrapper">
+                <h2 class="section-heading">Our Shops</h2>
+
+                <div class="shops__cards">
+                    <div class="shops__card" onclick="void(0)">
+                        <div class="shops__card-img shops__card-img--first">
+                            <div class="shops__card-img-title">New York</div>
+                            <div class="shops__card-img-info"><i class="fas fa-angle-double-right"></i> Wiecej
+                                informacji</div>
+                        </div>
+                        <div class="shops__card-info">
+                            <div class="shops__card-info-title">Broadway 2</div>
+                            <ul class="shops__card-info-list">
+                                <li class="shops__card-info-list-item">Hair cutting</li>
+                                <li class="shops__card-info-list-item">Bread trimming</li>
+                                <li class="shops__card-info-list-item">Nose waxing</li>
+                                <li class="shops__card-info-list-item">Facial care</li>
+                            </ul>
+                            <button class="shops__card-info-btn btn-animation">Make an appointment</button>
+                        </div>
+                    </div>
+                    <div class="shops__card" onclick="void(0)">
+                        <div class="shops__card-img shops__card-img--second">
+                            <div class="shops__card-img-title">Chicago</div>
+                            <div class="shops__card-img-info"><i class="fas fa-angle-double-right"></i> Wiecej
+                                informacji</div>
+                        </div>
+                        <div class="shops__card-info">
+                            <div class="shops__card-info-title">Michigan 7</div>
+                            <ul class="shops__card-info-list">
+                                <li class="shops__card-info-list-item">Hair cutting</li>
+                                <li class="shops__card-info-list-item">Bread trimming</li>
+                                <li class="shops__card-info-list-item">Nose waxing</li>
+                                <li class="shops__card-info-list-item">Facial care</li>
+                            </ul>
+                            <button class="shops__card-info-btn btn-animation">Make an appointment</button>
+                        </div>
+                    </div>
+                    <div class="shops__card" onclick="void(0)">
+                        <div class="shops__card-img shops__card-img--third">
+                            <div class="shops__card-img-title">San Antonio</div>
+                            <div class="shops__card-img-info"><i class="fas fa-angle-double-right"></i> Wiecej
+                                informacji</div>
+                        </div>
+                        <div class="shops__card-info">
+                            <div class="shops__card-info-title">Houston 5</div>
+                            <ul class="shops__card-info-list">
+                                <li class="shops__card-info-list-item">Hair cutting</li>
+                                <li class="shops__card-info-list-item">Bread trimming</li>
+                                <li class="shops__card-info-list-item">Nose waxing</li>
+                                <li class="shops__card-info-list-item">Facial care</li>
+                            </ul>
+                            <button class="shops__card-info-btn btn-animation">Make an appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="discounts section-padding" id="discounts">
+            <div class="corner-block corner-block-left-bottom"></div>
+            <div class="corner-block corner-block-right-top"></div>
+            <div class="wrapper">
+                <h2 class="section-heading section-heading--light">Discounts</h2>
+
+                <div class="discounts__box">
+
+                    <div class="discounts__option">
+                        <img src="./img/discounts-section-img1.jpg" alt="label with 9 stickers applied"
+                            class="discounts__option-img">
+                        <div class="discounts__option-info">
+                            <h3 class="discounts__option-heading">Collect stickers</h3>
+                            <p class="discounts__option-text">Collect a sticker after each haircut, and once you've
+                                gathered 10, enjoy a free visit on us.</p>
+                            <p class="discounts__option-text">It’s our way of saying thank you for choosing
+                                Sharp Cut Studio!</p>
+                            <button class="discounts__option-btn btn-animation ">Learn more</button>
+                        </div>
+                    </div>
+                    <div class="discounts__option">
+                        <img src="./img/discounts-section-img2.jpg" alt="Friendly handshake of 2 men"
+                            class="discounts__option-img discounts__option-img--right">
+                        <div class="discounts__option-info">
+                            <h3 class="discounts__option-heading">Invite a friend</h3>
+                            <p class="discounts__option-text">Bring a friend who mentions your referral, and you'll
+                                receive a 50% discount on your next visit.</p>
+                            <p class="discounts__option-text">It’s our way of rewarding you for spreading the word about
+                                Sharp Cut Studio!</p>
+                            <button class="discounts__option-btn btn-animation">Learn more</button>
+                        </div>
+                    </div>
+                    <div class="discounts__option">
+                        <img src="./img/discounts-section-img3.jpg"
+                            alt="ornament with the inscription happy birthday embedded in the cake"
+                            class="discounts__option-img">
+                        <div class="discounts__option-info">
+                            <h3 class="discounts__option-heading">Birthday discount</h3>
+                            <p class="discounts__option-text">Celebrate your birthday with us and enjoy a free visit by
+                                simply showing your ID at the counter</p>
+                            <p class="discounts__option-text">It's our gift to make your special day even better at
+                                Sharp Cut Studio!</p>
+                            <button class="discounts__option-btn btn-animation">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reviews section-padding" id="reviews">
+            <div class="wrapper">
+                <h2 class="section-heading">Reviews</h2>
+                <div class="reviews__container">
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/reviews-img1.jpg" alt="Jake Miller">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Amazing experience! The barbers here know exactly what they're
+                                doing, and I always leave with a flawless cut.</p>
+                            <strong>Jake Miller</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/reviews-img2.jpg" alt="Ethan Brooks">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Great atmosphere and skilled barbers! They took the time to
+                                understand what I wanted and delivered a perfect look.</p>
+                            <strong>Ethan Brooks</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/reviews-img3.jpg" alt="Liam Carter">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Best barbershop I've been to! The attention to detail and the
+                                friendly service make every visit a pleasure</p>
+                            <strong>Liam Carter</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="contact section-padding" id="contact">
+            <div class="corner-block corner-block-right-top"></div>
+            <div class="corner-block corner-block-left-bottom"></div>
+            <div class="wrapper">
+                <h2 class="section-heading">Contact</h2>
+                <div class="contact__form">
+                    <div class="contact__form-top">
+                        <label for="name" class="contact__form-label">Name: </label>
+                        <input type="text" id="name" class="contact__form-input">
+
+                        <label for="email" class="contact__form-label">E-mail: </label>
+                        <input type="text" id="email" class="contact__form-input">
+                    </div>
+                    <label for="msg" class="contact__form-label">Message: </label>
+                    <textarea id="msg" class="contact__form-textarea"></textarea>
+                    <button type="submit" class="contact__form-btn btn-animation">Send</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__boxes">
+                <div class="footer__box">
+                    <h3 class="footer__box-title"><i class="fa-solid fa-scissors"></i>SCS Co.</h3>
+                    <p>Sharp Cut Studio is where precision meets style. We offer professional haircut and grooming
+                        services for men, creating a space where everyone can feel exceptional.</p>
+                    <div class="footer__box-social">
+                        <a href="#" class="footer__box-link"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">Links</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#offer">Offer</a></li>
+                        <li class="footer__box-list-item"><a href="#shops">Shops</a></li>
+                        <li class="footer__box-list-item"><a href="#discounts">Discounts</a></li>
+                        <li class="footer__box-list-item"><a href="#reviews">Reviews</a></li>
+                        <li class="footer__box-list-item"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">Support</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">Terms</a></li>
+                        <li class="footer__box-list-item"><a href="#">Privacy Policy</a></li>
+                        <li class="footer__box-list-item"><a href="#">F&Q</a></li>
+                        <li class="footer__box-list-item"><a href="#">Cookies Policy</a></li>
+                        <li class="footer__box-list-item"><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="footer__bottom-text">&copy; <span class="footer__year"></span>Sharp Cut Studio</p>
+    </footer>
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/slick.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

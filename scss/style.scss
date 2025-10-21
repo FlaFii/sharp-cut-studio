@@ -1,0 +1,769 @@
+@use "./reset" as *;
+@use "./colors" as c;
+@use "./components" as *;
+@use "./mixins" as *;
+
+body {
+	font-family: "lato", sans-serif;
+	font-size: 1.6rem;
+	background-color: c.$background-color;
+	color: c.$font-color;
+}
+
+.body__scroll-block {
+	overflow: hidden;
+}
+// NAV
+.burger-btn {
+	display: flex;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 60px;
+	top: 20px;
+	right: 20px;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 100;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgb(255, 255, 255, 0.5);
+		border-radius: 20px;
+	}
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+
+		&--disabled {
+			display: none;
+		}
+	}
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include burgerBtn;
+	}
+	&__bars {
+		width: 100%;
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+		&::before {
+			top: 27px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+	&__close {
+		display: none;
+		font-size: 4.5rem;
+		color: #fff;
+
+		&--active {
+			display: block;
+		}
+	}
+}
+
+.nav {
+	&__items {
+		position: fixed;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100vh;
+		width: 100%;
+		background-image: c.$nav-gradient;
+		backdrop-filter: blur(8px);
+		transform: translateX(100%);
+		transition: transform 0.5s;
+		z-index: 50;
+		&--active {
+			transform: translateX(0);
+		}
+	}
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 3rem;
+		color: c.$font-color;
+		text-decoration: none;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			background-color: c.$white;
+			transform: scale(0);
+			transition: transform 0.3s;
+		}
+		&:hover::before {
+			transform: scale(1);
+		}
+	}
+}
+
+.burger-btn-background {
+	width: 70px;
+	height: 60px;
+	padding: 1em;
+	border-radius: 20px;
+	background-color: rgba(19, 23, 33, 0.8);
+	transition: all 0.3s;
+}
+
+// HEADER
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 75vh;
+	width: 100%;
+	padding: 2em;
+	text-align: center;
+	@include heroImg("../img/hero-img-sm.jpg");
+	background-attachment: scroll;
+	overflow: hidden;
+
+	&__heading {
+		font-family: "bebas neue", sans-serif;
+		font-size: 4.5rem;
+		letter-spacing: 2px;
+	}
+
+	&__text {
+		font-size: 1.6rem;
+	}
+	&__btn {
+		margin-top: 1.8em;
+		padding: 0.9em 1.8em;
+		font-size: 1.4rem;
+		color: c.$black;
+		background-color: c.$main-color;
+		border: none;
+		border-radius: 8px;
+		text-decoration: none;
+		text-transform: uppercase;
+		&::before {
+			background-color: c.$secondary-color;
+		}
+	}
+	&__chevron {
+		position: absolute;
+		bottom: 0px;
+		display: none;
+		padding: 0.6em 0.3em;
+		font-size: 4.5rem;
+		color: c.$font-color;
+		transition: color 0.3s;
+
+		&:hover {
+			color: c.$main-color;
+			cursor: pointer;
+		}
+	}
+}
+
+// MAIN
+// OFFER SECTION
+.offer {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 3em 0;
+	}
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+		border-radius: 8px;
+	}
+	&__title {
+		margin-bottom: 0.5em;
+		font-size: 2rem;
+		letter-spacing: 1px;
+		color: c.$secondary-color;
+	}
+	&__text {
+		font-size: 1.4rem;
+		line-height: 25px;
+		letter-spacing: 0.5px;
+	}
+	&__box-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 2em;
+		border: 1px solid c.$main-color;
+		border-radius: 8px;
+	}
+}
+
+// HERO-IMG
+
+.hero-img {
+	position: relative;
+	overflow: hidden;
+	padding: 13em 2em;
+	text-align: center;
+	@include heroImg("../img/hero-img-section-sm.jpg");
+
+	&__title {
+		margin-bottom: 0.5em;
+		font-family: "bebas neue", sans-serif;
+		font-size: 4.5rem;
+		letter-spacing: 2px;
+	}
+	&__text {
+		margin: 1em 0;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+	.corner-block {
+		width: 55%;
+	}
+}
+
+// SHOPS SECTION
+
+.shops {
+	scroll-margin-top: -1px;
+	&__card {
+		position: relative;
+		height: 450px;
+		margin: 1em 0;
+		color: c.$font-color;
+		text-align: center;
+		perspective: 1000px;
+
+		&:hover {
+			.shops__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.shops__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: c.$main-gradient, url("../img/shops-img1.jpg");
+			}
+			&--second {
+				background-image: c.$main-gradient, url("../img/shops-img2.jpg");
+			}
+			&--third {
+				background-image: c.$main-gradient, url("../img/shops-img3.jpg");
+			}
+			&-title {
+				font-family: "bebas neue", sans-serif;
+				font-size: 4rem;
+				letter-spacing: 2px;
+			}
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+
+				i {
+					margin-right: 0.3em;
+				}
+			}
+		}
+
+		&-info {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			border-radius: 8px;
+			background-image: c.$main-gradient-solid;
+			transform: rotateY(180deg);
+			opacity: 0;
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				@include shopsCardsStyle;
+				top: 1.2em;
+				font-family: "bebas neue", sans-serif;
+				font-size: 3rem;
+				letter-spacing: 2px;
+			}
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+
+				&-item {
+					padding: 1em;
+					font-size: 1.6rem;
+					border-bottom: 1px solid c.$white;
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+			&-btn {
+				@include shopsCardsStyle;
+				bottom: 2em;
+				padding: 1em;
+				width: 80%;
+				font-size: 1.6rem;
+				border: none;
+				border-radius: 8px;
+				background-color: c.$secondary-color;
+				cursor: pointer;
+
+				&::before {
+					background-color: c.$secondary-color-darker;
+				}
+			}
+		}
+	}
+}
+
+// DISCOUNTS SECTION
+.discounts {
+	position: relative;
+	@include heroImg("../img/discounts-section-hero-img-sm.jpg");
+	overflow: hidden;
+
+	.corner-block {
+		width: 55%;
+	}
+
+	&__option {
+		margin: 1em 0;
+		background-color: c.$background-color;
+		overflow: hidden;
+		border-radius: 8px;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+		&-info {
+			padding: 2em;
+			background-color: c.$background-color;
+			z-index: 10;
+		}
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			letter-spacing: 1px;
+		}
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.4rem;
+		}
+		&-btn {
+			width: 100%;
+			margin-top: 1em;
+			padding: 0.8em;
+			font-size: 1.6rem;
+			background-color: c.$secondary-color;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			&::before {
+				background-color: c.$secondary-color-darker;
+			}
+		}
+	}
+}
+
+// REVEIWS SECTION
+.reviews {
+	scroll-margin-top: -1px;
+	&__box {
+		position: relative;
+		margin: 2em;
+		padding: 2em;
+		background-color: c.$secondary-color;
+		color: c.$black;
+		border-radius: 8px;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.96);
+		}
+	}
+	&__box-img {
+		position: absolute;
+		top: 8%;
+		left: 75%;
+		transform: translate(-50%, -50%);
+
+		img {
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+	&__box-quote {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		color: c.$main-color;
+	}
+	&__box-text {
+		margin-bottom: 1em;
+		font-size: 1.6rem;
+	}
+}
+
+// CONTACT SECTION
+.contact {
+	position: relative;
+	background-color: c.$background-color-light;
+	overflow: hidden;
+
+	.corner-block-left-bottom {
+		background-color: c.$background-color-dark;
+	}
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+	&__form-label {
+		margin-bottom: 0.8em;
+		text-transform: uppercase;
+	}
+	&__form-input {
+		@include contactForm;
+	}
+	&__form-textarea {
+		@include contactForm;
+		width: 100%;
+		min-height: 150px;
+		resize: vertical;
+	}
+	&__form-btn {
+		align-self: flex-end;
+		width: 100%;
+		padding: 1em;
+		border: none;
+		border-radius: 8px;
+		background-color: c.$secondary-color;
+		cursor: pointer;
+		&::before {
+			background-color: c.$secondary-color-darker;
+		}
+	}
+}
+
+// FOOTER SECTION
+.footer {
+	background-color: c.$background-color-dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+	&__box {
+		font-size: 1.4rem;
+	}
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		font-size: 3rem;
+		margin-bottom: 1em;
+
+		.fa-scissors {
+			margin-right: 0.5em;
+		}
+	}
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+	&__box-link {
+		margin: 0.5em;
+		font-size: 3.6rem;
+		color: c.$font-color;
+		text-decoration: none;
+		transition: color 0.3s;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:hover {
+			color: c.$main-color;
+		}
+	}
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+		font-size: 1.8rem;
+
+		.footer__year {
+			margin-right: 0.5em;
+		}
+	}
+}
+// #########################
+// MEDIA
+// #########################
+@media (max-width: 768px) {
+	.reviews.section-padding {
+		padding: 6em 0;
+	}
+}
+@media (min-width: 768px) {
+	.corner-block {
+		height: 50px;
+	}
+	.nav {
+		&__item {
+			font-size: 4rem;
+		}
+	}
+
+	.header {
+		&__heading {
+			font-size: 6.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+		&__btn {
+			font-size: 1.8rem;
+		}
+		&__chevron {
+			display: block;
+		}
+	}
+	.offer {
+		&__title {
+			font-size: 2.8rem;
+		}
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+	.hero-img {
+		padding: 24em 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+		&__title {
+			font-size: 6.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+	.shops {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 45%;
+
+			&-info-list-item {
+				font-size: 1.8rem;
+			}
+		}
+	}
+	.discounts {
+		&__option {
+			display: flex;
+			width: 100%;
+			margin: 2em 0;
+			&-img {
+				width: 50%;
+				height: auto;
+				&--right {
+					order: 1;
+				}
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 2.6rem;
+			}
+			&-text {
+				font-size: 1.6rem;
+			}
+		}
+	}
+	.reviews {
+		&__box {
+			height: 250px;
+		}
+	}
+	.contact {
+		&__form-btn {
+			max-width: 300px;
+		}
+	}
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__box-desktop {
+			display: block;
+		}
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			font-size: 2.4rem;
+		}
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			margin-bottom: 0.8em;
+
+			a {
+				text-decoration: none;
+				color: c.$font-color;
+				transition: color 0.3s;
+				&:hover {
+					color: c.$main-color;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 40px;
+		right: 40px;
+	}
+	.nav {
+		&__item {
+			font-size: 4.8rem;
+		}
+	}
+	.header {
+		background-image: c.$main-gradient, url("../img/hero-img-lg.jpg");
+
+		&__heading {
+			font-size: 8rem;
+		}
+	}
+
+	.offer {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&__box-text {
+			width: 55%;
+
+			&--right {
+				text-align: right;
+			}
+		}
+		&__img {
+			margin-bottom: 0;
+		}
+		&__box-img {
+			width: 40%;
+
+			&--right {
+				order: 1;
+			}
+		}
+	}
+	.hero-img {
+		padding: 25em 2em;
+		background-image: c.$main-gradient, url("../img/hero-img-section-lg.jpg");
+
+		&__title {
+			font-size: 8rem;
+		}
+		&__text {
+			font-size: 2.4rem;
+		}
+	}
+	.discounts {
+		background-image: c.$main-gradient,
+			url("../img/discounts-section-hero-img-lg.jpg");
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+			&-heading {
+				font-size: 2.8rem;
+			}
+		}
+	}
+}
+@media (min-width: 1100px) {
+	.shops {
+		&__card {
+			width: 30%;
+		}
+	}
+	.reviews {
+		&__box {
+			strong {
+				font-size: 1.7rem;
+			}
+		}
+		&__box-text {
+			font-size: 1.8rem;
+		}
+	}
+}

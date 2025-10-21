@@ -1,0 +1,31 @@
+@use "./colors" as c;
+
+@mixin burgerBtn {
+	content: "";
+	position: absolute;
+	right: 0;
+	height: 4px;
+	border-radius: 7px;
+	background-color: c.$white;
+	transition: width 0.3s;
+}
+@mixin heroImg($imgLink) {
+	background-image: c.$main-gradient, url($imgLink);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+@mixin shopsCardsStyle {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@mixin contactForm {
+	width: 100%;
+	margin-bottom: 2em;
+	padding: 0.6em 1.2em;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.6rem;
+}

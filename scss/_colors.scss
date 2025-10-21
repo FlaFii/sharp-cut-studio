@@ -1,0 +1,25 @@
+$background-color: #282f44;
+$background-color-light: #3c4560;
+$background-color-dark: #131721;
+$main-color: #e6af2e;
+$secondary-color: #f5d061;
+$secondary-color-darker: #c6a74a;
+$font-color: #ececec;
+$white: #ffffff;
+$black: #000;
+
+$main-gradient: linear-gradient(
+	45deg,
+	rgba(0, 0, 0, 1) 0%,
+	rgba(165, 119, 10, 0.7) 100%
+);
+$main-gradient-solid: linear-gradient(
+	45deg,
+	rgba(77, 57, 12, 1) 44%,
+	rgba(165, 119, 10, 1) 94%
+);
+$nav-gradient: linear-gradient(
+	45deg,
+	rgba(0, 0, 0, 1) 0%,
+	rgba(40, 47, 68, 0.95) 100%
+);
