@@ -81,4 +81,4 @@ Splitting code into smaller files to keep code nice and tidy
 
 FlaFii • https://github.com/FlaFii
 
-Contact: mateusz.szymus@gmail.com
+Contact: mateusz.szymus7@gmail.com
